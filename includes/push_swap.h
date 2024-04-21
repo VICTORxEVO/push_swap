@@ -3,7 +3,7 @@
 
 /*include other headers*/
 # include "ft_printf.h"
-
+# include <stdbool.h>
 
 
 /*some colors and values*/
@@ -17,6 +17,15 @@
 
 /*needed structs*/
 
+typedef struct s_stack
+{
+    int *data;
+    unsigned int cost;
+    unsigned int index;
+    bool is_at_bottom;
+    t_stack *target;
+    t_stack *next;
+}               t_stack;
 
 
 
