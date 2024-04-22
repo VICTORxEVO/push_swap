@@ -1,12 +1,13 @@
 #include "../includes/push_swap.h"
 
-void load_num(int ac, char *av[], t_stack *a)
+void load_num(int ac, char *av[], t_stack **head)
 {
     char **ptr;
     int i;
     int j;
+    int index;
 
-    a = NULL;
+    index = 0;
     i = -1;
     while(++i < ac)
         ptr[i] = ft_split(av[i], ' ');
@@ -15,7 +16,6 @@ void load_num(int ac, char *av[], t_stack *a)
     while(++i < ac)
     {
         while(ptr[i][++j])
-            ft_lstadd_front(&a, ft_lstnew(verify_overflow(ptr[i])));
+            ft_lstadd_back(&a, ft_lstnew(verify_overflow(ptr[i][j], a, ptr)), index++);
     }
-        
 }

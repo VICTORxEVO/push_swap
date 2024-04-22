@@ -10,10 +10,8 @@
 # define END "\033[0m"
 # define RED "\033[31m"
 # define YELLOW "\033[33m"
-
-
-
-
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 /*needed structs*/
 
