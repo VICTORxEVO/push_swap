@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-void    clear_stack(t_stack **head, char flag, int index)
+void    clear_stack(t_stack **head, int index, char flag)
 {
     if(index == 2)
     {

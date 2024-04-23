@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:36:03 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/04/23 15:56:15 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/04/23 20:57:41 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ bool	ft_lstadd_back(t_stack **lst, t_stack *new)
 	t_stack	*tmp;
 
 	if (!lst || !new)
-		return ;
+		return false;
 	tmp = *lst;
 	if (*lst)
 	{
@@ -27,4 +27,5 @@ bool	ft_lstadd_back(t_stack **lst, t_stack *new)
 	}
 	else
 		*lst = new;
+	return true;
 }

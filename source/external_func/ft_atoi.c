@@ -6,13 +6,15 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:44:59 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/04/22 10:01:37 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/04/23 19:45:49 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+#include "../../includes/push_swap.h"
+
+ssize_t	ft_atoi(const char *str)
 {
-	long	res;
+	ssize_t	res;
 	char	sign;
 	int		i;
 

@@ -6,13 +6,13 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:37:01 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/04/23 10:35:23 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/04/23 21:00:01 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/push_swap.h"
 
-void	ft_lstdelone(t_list *lst)
+void	ft_lstdelone(t_stack *lst)
 {
 	if (lst)
 		free(lst);

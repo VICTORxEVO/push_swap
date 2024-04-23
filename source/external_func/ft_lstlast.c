@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:35:13 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/30 11:32:58 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/04/23 21:01:40 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/push_swap.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);

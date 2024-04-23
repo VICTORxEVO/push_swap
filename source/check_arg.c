@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-void    check_if_num(int ac, char *av[])
+static void    check_if_num(int ac, char *av[])
 {
     int i;
     int j;

@@ -13,6 +13,8 @@ void    check_duplicate(t_stack **head)
         {
             if (doubtful == tmp->num)
                 (perror("Error\n"), clear_stack(head, 0, 'E'));
+            tmp = tmp->next;
         }
+        head[0] = head[0]->next;
     }
 }
