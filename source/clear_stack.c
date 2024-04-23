@@ -9,7 +9,7 @@ void    clear_stack(t_stack **head, char flag, int index)
     }
     else
         ft_lstclear(head[index]);
-    if (flag == 'Y')
+    if (flag == 'E')
     {
         exit(EXIT_FAILURE);
         write(2, "Error\n", 6);

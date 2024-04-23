@@ -8,6 +8,6 @@ void verify_overflow(char *str, t_stack *a, char **ptr)
     if (num > INT_MAX || num < INT_MIN)
     {
         clear_buff(ptr);
-        clear_stack(a, 'Y');
+        clear_stack(a, 'E', 0);
     }
 }

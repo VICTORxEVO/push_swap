@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-void    free_arr(char **arr)
+void    clear_arr(char **arr)
 {
     int i;
 
