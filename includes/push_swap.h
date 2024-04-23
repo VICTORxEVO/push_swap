@@ -17,7 +17,7 @@
 
 typedef struct s_stack
 {
-    int *data;
+    int *num;
     unsigned int cost;
     unsigned int index;
     bool is_at_bottom;

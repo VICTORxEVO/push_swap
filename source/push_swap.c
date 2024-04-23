@@ -7,6 +7,6 @@ int main (int ac, char *av[])
     t_stack **head;
 
     check_arg(ac, av);
-    load_stack(a, b, head);
+    load_stack(&a, &b, head);
     load_num(ac, av, head);
 }

@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysbai-jo <ysbai-jo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 17:22:56 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/25 14:48:12 by ysbai-jo         ###   ########.fr       */
+/*   Created: 2023/11/23 18:37:32 by ysbai-jo          #+#    #+#             */
+/*   Updated: 2024/04/23 10:37:12 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstclear(t_stack **lst)
 {
-	t_list	*new;
+	t_stack	*tm;
 
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	if (!lst)
+		return ;
+	while ((*lst) != NULL)
+	{
+		tm = (*lst)->next;
+		ft_lstdelone(*lst);
+		*lst = tm;
+	}
+	*lst = NULL;
 }

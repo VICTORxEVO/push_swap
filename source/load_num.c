@@ -16,6 +16,6 @@ void load_num(int ac, char *av[], t_stack **head)
     while(++i < ac)
     {
         while(ptr[i][++j])
-            ft_lstadd_back(&a, ft_lstnew(verify_overflow(ptr[i][j], a, ptr)), index++);
+            ft_lstadd_back(&head[0], ft_lstnew(check_overflow(ptr[i][j], &head[0], ptr)), index++);
     }
 }
