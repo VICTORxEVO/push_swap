@@ -12,5 +12,14 @@ int main (int ac, char *av[])
     if(!check_if_sorted(head[0]))
         // main_sort(head);
     printf("%d", check_if_sorted(head[0]));
+    t_stack *current = head[0];
+    int i;
+    for (; current!= NULL; current = current->next)
+    {
+        printf("%d   ", current->num);
+        printf("%d\n", i++);
+        printf("------------------\n");
+    }
+    printf("\n");
     clear_stack(head, 2, 'S');
 }
