@@ -9,6 +9,8 @@ bool    check_if_sorted(t_stack *a)
     {
         if (a->num > next_num->num)
             return false;
+        a = a->next;
+        next_num = next_num->next;
     }
     return true;
 }

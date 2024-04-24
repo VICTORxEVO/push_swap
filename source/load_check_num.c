@@ -2,27 +2,27 @@
 
 void load_check_num(int ac, char *av[], t_stack **head)
 {
-    char **ptr;
+    char **split_ptr;
     int i;
-    int j;
-    int index;
+    int num;
     bool res;
+    int j;
 
-    index = 0;
-    i = -1;
-    while(++i < ac)
-        ptr[i] = ft_split(av[i], ' ');
-    ptr[i] = NULL;
     i = -1;
     while(++i < ac)
     {
+        split_ptr = ft_split(av[i], ' ');
+        if (!split_ptr)
+            clear_stack(head, 'a', 'E');
         j = -1;
-        while(ptr[i][++j])
+        while(split_ptr[++j])
         {
-            res = ft_lstadd_back(&head[0], ft_lstnew(check_overflow(ptr[i][j], &head[0], ptr)), index++);
+            num = ft_atoi(split_ptr[j], head, split_ptr);
+            res = ft_lstadd_back(head, ft_lstnew(num));
             if (!res)
-                (clear_buff(ptr), clear_stack(head[0], 'E', 0));
+                (clear_arr(split_ptr), clear_stack(head, 'a', 'E'));
         }
+        clear_arr(split_ptr);
     }
-    (clear_buff(ptr), check_duplicate(head));
+    check_duplicate(head);
 }

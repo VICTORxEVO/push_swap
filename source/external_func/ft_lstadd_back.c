@@ -6,11 +6,11 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:36:03 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/04/23 20:57:41 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:32:56 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 bool	ft_lstadd_back(t_stack **lst, t_stack *new)
 {

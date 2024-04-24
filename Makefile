@@ -1,0 +1,27 @@
+NAME= push_swap
+
+CCF= cc
+
+SRC = $(shell find . -name "*.c")
+OBJ = $(SRC:.c=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+		@$(CCF) -g -o $(NAME) $^
+		@echo "compiling"
+		@sleep 0.5
+		@echo "push_swap is ready"
+
+%.o: %.c
+		@$(CCF) -c $< -o $@
+
+clean:
+		@rm -f $(OBJ)
+		@echo "cleaning..."
+
+fclean: clean
+		@rm -f $(NAME)
+		@echo "cleaning program..."
+
+re: fclean all

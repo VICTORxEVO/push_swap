@@ -5,16 +5,14 @@ static void    check_if_num(int ac, char *av[])
     int i;
     int j;
 
-    i = -1;
-    j = -1;
+    i = 0;
     while (++i < ac)
     {
+        j = -1;
         while (av[i][++j])
         {
-            if (!((av[i][j] >= '0' && av[i][j] <= '9') && (av[i][j] == ' ' || av[i][j] == '\t')))
-            {
-                (perror("Error\n"), exit(EXIT_FAILURE));
-            }
+            if (!ft_isdigit(av[i][j]) && !(av[i][j] == ' ' || av[i][j] == '+' || av[i][j] == '-'))
+                (ft_putstr_err("Error not num\n"), exit(EXIT_FAILURE));
         }
     }
 }
@@ -22,6 +20,6 @@ static void    check_if_num(int ac, char *av[])
 void    check_arg(int ac, char *av[])
 {
     if(ac < 2)
-        (perror("Error\n"), exit(EXIT_FAILURE));
+        (ft_putstr_err("Error args\n"), exit(EXIT_FAILURE));
     check_if_num(ac, av);
 }

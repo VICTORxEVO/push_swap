@@ -2,7 +2,7 @@
 
 void    check_duplicate(t_stack **head)
 {
-    int doubtful;
+    int     doubtful;
     t_stack *tmp;
 
     while(head[0])
@@ -12,7 +12,7 @@ void    check_duplicate(t_stack **head)
         while(tmp)
         {
             if (doubtful == tmp->num)
-                (perror("Error\n"), clear_stack(head, 0, 'E'));
+                clear_stack(head, 'a', 'E');
             tmp = tmp->next;
         }
         head[0] = head[0]->next;

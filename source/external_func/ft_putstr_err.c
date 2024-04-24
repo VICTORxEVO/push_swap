@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_err.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 17:22:56 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/04/24 15:18:28 by ysbai-jo         ###   ########.fr       */
+/*   Created: 2023/11/22 11:10:30 by ysbai-jo          #+#    #+#             */
+/*   Updated: 2024/04/24 11:52:28 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_stack	*ft_lstnew(int content)
+void	ft_putstr_err(char *s)
 {
-	t_stack	*new;
-
-	new = malloc(sizeof(t_stack));
-	if (!new)
-		return (NULL);
-	new->num = content;
-	new->next = NULL;
-	return (new);
+	if (s)
+	{
+		while (*s)
+			write(2, s++, 1);
+	}
 }
