@@ -6,13 +6,13 @@ int main (int ac, char *av[])
     t_stack *b;
     t_stack **head;
 
-    check_arg(ac, av);
+    check_arg(ac - 1, av + 1);
     head = load_stack(&a, &b);
     load_check_num(ac - 1, av + 1, head);
     // if(!check_if_sorted(head[0]))
     //     main_sort(head);
     // printf("nummm is  %d\n", head[0]->num);
-    // printf("is sorted -->>%d and max value is \n", check_if_sorted(head[0]));
+    // printf("is sorted -->>%d and max value is %d\n", check_if_sorted(head[0]), give_max(head));
     t_stack *tmp = head[0];
     int i = 0;
     while(tmp)

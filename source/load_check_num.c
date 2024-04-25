@@ -25,4 +25,5 @@ void load_check_num(int ac, char *av[], t_stack **head)
         clear_arr(split_ptr);
     }
     check_duplicate(head);
+    printf("num is %d\n", head[0]->num);
 }

@@ -5,7 +5,7 @@ static void    check_if_num(int ac, char *av[])
     int i;
     int j;
 
-    i = 0;
+    i = -1;
     while (++i < ac)
     {
         j = -1;
@@ -19,7 +19,7 @@ static void    check_if_num(int ac, char *av[])
 
 void    check_arg(int ac, char *av[])
 {
-    if(ac < 2)
+    if(ac < 1)
         (ft_putstr_err("Error args\n"), exit(EXIT_FAILURE));
     check_if_num(ac, av);
 }

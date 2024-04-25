@@ -8,9 +8,9 @@ t_stack    **load_stack(t_stack **a, t_stack **b)
     if (!ptr)
         (ft_putstr_err("Error/n"), exit(EXIT_FAILURE));
     ptr[2] = NULL;
-    ptr[0] = *a;
-    ptr[1] = *b;
     *a = NULL;
     *b = NULL;
+    ptr[0] = *a;
+    ptr[1] = *b;
     return (ptr);
 }
