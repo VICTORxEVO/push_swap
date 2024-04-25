@@ -1,13 +1,8 @@
 #include "../includes/push_swap.h"
 
-void    clear_stack(t_stack **head, char stack, char flag)
+void    clear_stack(t_stack **head, char flag)
 {
-    if(stack == 'a')
-        ft_lstclear(&head[0]);
-    else if (stack == 'b')
-        ft_lstclear(&head[1]);
-    else
-        (ft_lstclear(&head[0]), ft_lstclear(&head[1]));
+        (ft_lstclear(head), ft_lstclear(head + 1), free(head));
     if (flag == 'E')
     {
         write(2, "Error\n", 6);

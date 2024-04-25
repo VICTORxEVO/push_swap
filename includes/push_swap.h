@@ -51,7 +51,7 @@ bool    check_if_sorted(t_stack *a);
 
 // clear functions
 void    clear_arr(char **arr);
-void    clear_stack(t_stack **head, char stack, char flag);
+void    clear_stack(t_stack **head, char flag);
 
 // loading functions
 void    load_check_num(int ac, char *av[], t_stack **head);
@@ -64,7 +64,9 @@ void    sort_4(t_stack **head);
 void    sort_5(t_stack **head);
 
 // operation functions
-int     give_max(t_stack **head);
+int     give_max(t_stack **head, char stack);
+void    swap(char stack, t_stack **head);
+void    push_to(char stack, t_stack **head);
 
 
 

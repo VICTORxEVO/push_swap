@@ -1,16 +1,21 @@
 #include "../includes/push_swap.h"
 
-int give_max(t_stack **head)
+int give_max(t_stack **head, char stack)
 {
     int max;
+    t_stack *tmp;
 
-    max = head[0]->num;
-    head[0] = head[0]->next;
-    while(head[0])
+    if (stack == 'a')
+        tmp = head[0];
+    else
+        tmp = head[1];
+    max = tmp->num;
+    tmp = tmp->next;
+    while(tmp)
     {
-        if(head[0]->num > max)
-            max = head[0]->num;
-        head[0] = head[0]->next;
+        if(tmp->num > max)
+            max = tmp->num;
+        tmp = tmp->next;
     }
     return (max);
 }

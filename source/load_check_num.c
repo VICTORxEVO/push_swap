@@ -13,17 +13,16 @@ void load_check_num(int ac, char *av[], t_stack **head)
     {
         split_ptr = ft_split(av[i], ' ');
         if (!split_ptr)
-            clear_stack(head, 'a', 'E');
+            clear_stack(head, 'E');
         j = -1;
         while(split_ptr[++j])
         {
             num = ft_atoi(split_ptr[j], head, split_ptr);
             res = ft_lstadd_back(head, ft_lstnew(num));
             if (!res)
-                (clear_arr(split_ptr), clear_stack(head, 'a', 'E'));
+                (clear_arr(split_ptr), clear_stack(head, 'E'));
         }
         clear_arr(split_ptr);
     }
     check_duplicate(head);
-    printf("num is %d\n", head[0]->num);
 }
