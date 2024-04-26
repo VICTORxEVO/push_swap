@@ -10,7 +10,7 @@ static void    print_stack(t_stack *head, char flag)
     int i = 0;
     while(tmp)
     {
-        printf("i -->> %d\tnumber -->> %d\n", i++, tmp->num);
+        printf("i -->> %d\tnumber -->> %d\n", tmp->index, tmp->num);
         printf("---------------------\n");
         tmp = tmp->next;
     }
@@ -29,15 +29,16 @@ int main (int ac, char *av[])
     // if(!check_if_sorted(head[0]))
     //     main_sort(head);
     printf("is sorted -->>%d and max value is %d\n", check_if_sorted(head[0]), give_max(head, 'a'));
+    update_stack_indexing(head);
+    print_stack(head[0], 'a');
+    print_stack(head[1], 'b');
     printf("------\nAFTER PUSH\n--------\n");
     push_to('b', head);
     push_to('b', head);
-    push_to('b', head);
-    push_to('b', head);
-    swap('a', head);
-    swap('b', head);
+    swap('A', head);
+    // swap('b', head);
+    // swap('b', head);
     print_stack(head[0], 'a');
     print_stack(head[1], 'b');
-    // swap('b', head);
     clear_stack(head, 'S');
 }

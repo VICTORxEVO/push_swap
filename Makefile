@@ -25,3 +25,5 @@ fclean: clean
 		@echo "cleaning program..."
 
 re: fclean all
+
+clear: all clean

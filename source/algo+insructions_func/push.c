@@ -4,24 +4,27 @@ void    push_to(char stack, t_stack **head)
 {
     t_stack *next_node;
 
-    if (stack == 'b' && !head[1])
-    {
-        head[1] = head[0];
-        head[0] = head[0]->next;
-        head[1]->next = NULL;
-    }
-    else if (stack == 'b')
+    if (stack == 'b' && head[0])
     {
         next_node = head[1];
         head[1] = head[0];
         head[0] = head[0]->next;
-        head[1]->next = next_node;
+        if (head[1])
+            head[1]->next = next_node;
+        else
+            head[1]->next = NULL;
+        write(1, "pb\n", 3);
     }
-    else
+    else if (stack == 'a' && head[1])
     {
         next_node = head[0];
         head[0] = head[1];
         head[1] = head[1]->next;
-        head[0]->next = next_node;
+        if (head[0])
+            head[0]->next = next_node;
+        else
+            head[0]->next = NULL;
+        write(1, "pa\n", 3);
     }
+    update_stack_indexing(head);
 }

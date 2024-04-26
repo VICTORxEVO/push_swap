@@ -67,6 +67,7 @@ void    sort_5(t_stack **head);
 int     give_max(t_stack **head, char stack);
 void    swap(char stack, t_stack **head);
 void    push_to(char stack, t_stack **head);
+void    update_stack_indexing(t_stack **head);
 
 
 
