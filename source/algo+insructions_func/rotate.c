@@ -22,14 +22,14 @@ void        rotate(char stack, t_stack **head)
         rotate_part2(head, 0, stack);
     else if (stack == 'b' && head[1] && head[1]->next)
         rotate_part2(head, 1, stack);
-    else
+    else if (stack == 'A')
     {
         if (head[0] && head[0]->next)
             rotate_part2(head, 0, 'X');
         if (head[1] && head[1]->next)
             rotate_part2(head, 1, 'X');
         if ((head[1] && head[1]->next) || (head[1] && head[1]->next))
-            write(1, "rrr\n", 4);
+            write(1, "rr\n", 3);
     }
     update_stack_indexing(head);
 }

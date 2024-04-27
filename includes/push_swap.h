@@ -19,7 +19,7 @@ typedef struct s_stack
     int         num;
     unsigned int cost;
     unsigned int index;
-    bool is_at_bottom;
+    bool is_upper_mid;
     struct s_stack *target;
     struct s_stack *next;
 }               t_stack;
@@ -39,10 +39,11 @@ void	ft_lstclear(t_stack **lst);
 void	ft_lstdelone(t_stack *lst);
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lstnew(int content);
-int     ft_lstsize(t_stack *lst);
+unsigned int     ft_lstsize(t_stack *lst);
 char	**ft_split(const char *s, char c);
 void	ft_putstr_err(char *s);
 int     ft_isdigit(int x);
+void    ft_swap(int *a, int *b);
 
 // check functions
 void    check_arg(int ac, char *av[]);
@@ -62,12 +63,15 @@ void    main_sort(t_stack **head);
 void    sort_3(t_stack **head);
 void    sort_4(t_stack **head);
 void    sort_5(t_stack **head);
+void    sort_infinite(t_stack **head, unsigned int size);
 
 // operation functions
-int     give_max(t_stack **head, char stack);
+t_stack *give_max(char stack, t_stack **head);
 void    swap(char stack, t_stack **head);
 void    push_to(char stack, t_stack **head);
+void        rotate(char stack, t_stack **head);
 void    update_stack_indexing(t_stack **head);
+void    rev_rotate(char stack, t_stack **head);
 
 
 
