@@ -10,12 +10,10 @@ t_stack *give_max(char stack, t_stack **head)
     else
         tmp = head[1];
     max = tmp;
-    tmp = tmp->next;
-    while(tmp)
+    while((tmp = tmp->next))
     {
         if(tmp->num > max->num)
             max = tmp;
-        tmp = tmp->next;
     }
     return (max);
 }

@@ -11,10 +11,10 @@ void    main_sort(t_stack **head)
         swap('a', head);
     else if (size == 3)
         sort_3(head);
-    // else if (size == 4)
-    //     sort_4(head);
-    // else if (size == 5)
-    //     sort_5(head);
+    else if (size == 4)
+        sort_4(head);
+    else if (size == 5)
+        sort_5(head);
     else
         sort_infinite(head, size);
 }

@@ -4,6 +4,9 @@
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 .vscode/
 .Ds_Store
+push_swap
+output.txt
+tester.sh
 # User-specific files
 *.rsuser
 *.suo

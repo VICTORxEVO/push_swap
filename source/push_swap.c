@@ -7,10 +7,9 @@ static void    print_stack(t_stack *head, char flag)
     else
         printf("satck B\n+++++++++++++++++++++\n");
     t_stack *tmp = head;
-    int i = 0;
     while(tmp)
     {
-        printf("i -->> %d\tnumber -->> %d target->num %d\n", tmp->index, tmp->num, tmp->target->num);
+        printf("i -->> %d\tnumber -->> %d target->num \n", tmp->index, tmp->num);
         printf("---------------------\n");
         tmp = tmp->next;
     }
@@ -32,9 +31,14 @@ int main (int ac, char *av[])
     update_stack_indexing(head);
     // print_stack(head[0], 'a');
     // print_stack(head[1], 'b');
-    printf("------\nAFTER PUSH\n--------\n");
-    sort_infinite(head, ft_lstsize(head[0]));
-    print_stack(head[0], 'a');
+    // printf("------\nAFTER PUSH\n--------\n");
+    // sort_infinite(head, ft_lstsize(head[0]));
+    sort_5(head);
+    // print_stack(head[0], 'a');
     // print_stack(head[1], 'b');
+    // if (check_if_sorted(head[0]))
+    //     write(1, "OK\n", 3);
+    // else
+    //     write(1, "KO\n", 3);
     clear_stack(head, 'S');
 }

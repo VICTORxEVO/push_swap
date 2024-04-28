@@ -65,14 +65,22 @@ void    sort_4(t_stack **head);
 void    sort_5(t_stack **head);
 void    sort_infinite(t_stack **head, unsigned int size);
 
-// operation functions
+// instructions functions
 t_stack *give_max(char stack, t_stack **head);
+t_stack *give_min(char stack, t_stack **head);
 void    swap(char stack, t_stack **head);
 void    push_to(char stack, t_stack **head);
 void        rotate(char stack, t_stack **head);
 void    update_stack_indexing(t_stack **head);
 void    rev_rotate(char stack, t_stack **head);
 
+// algo functions
+void    target_comfirmed(t_stack **to_set, t_stack **doubtful_target, int *nearest_number);
+void    set_a_targets(t_stack **head);
+void    set_b_targets(t_stack **head);
+void    calculate_cost(t_stack *node, unsigned int size_a, unsigned int size_b);
+t_stack *extract_cheapest(t_stack *node);
+void    move_targets_up(t_stack **head, t_stack *target_a, t_stack *target_b);
 
 
 

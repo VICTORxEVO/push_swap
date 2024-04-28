@@ -14,7 +14,7 @@ $(NAME): $(OBJ)
 		@echo "push_swap is ready"
 
 %.o: %.c
-		@$(CCF) -c $< -o $@
+		@$(CCF) -c $< -o $@ -g
 
 clean:
 		@rm -f $(OBJ)
