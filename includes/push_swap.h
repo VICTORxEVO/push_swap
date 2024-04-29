@@ -75,14 +75,16 @@ void    update_stack_indexing(t_stack **head);
 void    rev_rotate(char stack, t_stack **head);
 
 // algo functions
-void    target_comfirmed(t_stack **to_set, t_stack **doubtful_target, int *nearest_number);
 void    set_a_targets(t_stack **head);
 void    set_b_targets(t_stack **head);
 void    calculate_cost(t_stack *node, unsigned int size_a, unsigned int size_b);
 t_stack *extract_cheapest(t_stack *node);
-void    move_targets_up(t_stack **head, t_stack *target_a, t_stack *target_b);
+void    move_targets_up(t_stack **head, t_stack *a_node, t_stack *b_node);
+void    final_touch(t_stack **head, t_stack *min_node);
 
 
+
+void    print_stack(t_stack *head, char flag);
 
 
 

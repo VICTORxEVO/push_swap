@@ -4,6 +4,7 @@ void    main_sort(t_stack **head)
 {
     unsigned int    size;
 
+    update_stack_indexing(head);
     size = ft_lstsize(head[0]);
     if (size == 1)
         return ;

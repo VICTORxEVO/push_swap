@@ -1,5 +1,17 @@
 #include "../../includes/push_swap.h"
 
+static void sort_infinite_r(t_stack **head)
+{
+    t_stack *cheapest;
+
+    set_b_targets(head);
+    calculate_cost(head[1], ft_lstsize(head[1]), ft_lstsize(head[0]));
+    cheapest = extract_cheapest(head[1]);
+    move_targets_up(head, cheapest->target, cheapest);
+    push_to('a', head);
+}
+
+
 void    sort_infinite(t_stack **head, unsigned int size)
 {
     t_stack *cheapest;
@@ -14,4 +26,9 @@ void    sort_infinite(t_stack **head, unsigned int size)
         move_targets_up(head, cheapest, cheapest->target);
         push_to('b', head);
     }
+    sort_5(head);
+    while (head[1])
+        sort_infinite_r(head);
+    if (!check_if_sorted(head[0]))
+        final_touch(head, give_min('a', head));
 }
