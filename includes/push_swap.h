@@ -4,21 +4,20 @@
 /*include other headers*/
 # include "ft_printf.h"
 # include <stdbool.h>
+# include <limits.h>
 
 /*some colors and values*/
 # define END "\033[0m"
 # define RED "\033[31m"
 # define YELLOW "\033[33m"
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
 
 /*needed structs*/
 
 typedef struct s_stack
 {
     int         num;
-    unsigned int cost;
-    unsigned int index;
+    size_t cost;
+    size_t index;
     bool is_upper_mid;
     struct s_stack *target;
     struct s_stack *next;
@@ -48,7 +47,7 @@ void    ft_swap(int *a, int *b);
 // check functions
 void    check_arg(int ac, char *av[]);
 void    check_duplicate(t_stack **head);
-bool    check_if_sorted(t_stack *a);
+bool    is_sorted(t_stack *a);
 
 // clear functions
 void    clear_arr(char **arr);
@@ -63,24 +62,26 @@ void    main_sort(t_stack **head);
 void    sort_3(t_stack **head);
 void    sort_4(t_stack **head);
 void    sort_5(t_stack **head);
-void    sort_infinite(t_stack **head, unsigned int size);
+void    sort_infinite(t_stack **head);
 
 // instructions functions
-t_stack *give_max(char stack, t_stack **head);
-t_stack *give_min(char stack, t_stack **head);
-void    swap(char stack, t_stack **head);
-void    push_to(char stack, t_stack **head);
+t_stack     *give_max(char stack, t_stack **head);
+t_stack     *give_min(char stack, t_stack **head);
+void        swap(char stack, t_stack **head);
+void        push_to(char stack, t_stack **head);
 void        rotate(char stack, t_stack **head);
-void    update_stack_indexing(t_stack **head);
-void    rev_rotate(char stack, t_stack **head);
+void        update_stack_indexing(t_stack **head);
+void        rev_rotate(char stack, t_stack **head);
 
 // algo functions
-void    set_a_targets(t_stack **head);
-void    set_b_targets(t_stack **head);
-void    calculate_cost(t_stack *node, unsigned int size_a, unsigned int size_b);
-t_stack *extract_cheapest(t_stack *node);
-void    move_targets_up(t_stack **head, t_stack *a_node, t_stack *b_node);
-void    final_touch(t_stack **head, t_stack *min_node);
+void        set_a_targets(t_stack **head);
+void        set_b_targets(t_stack **head);
+void        calculate_cost(t_stack *node, size_t size_a, size_t size_b);
+t_stack     *extract_cheapest(t_stack *node);
+void        move_targets_up(t_stack **head, t_stack *a_node, t_stack *b_node);
+void        final_touch(t_stack **head, t_stack *min_node);
+
+
 
 
 

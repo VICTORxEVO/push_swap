@@ -1,6 +1,6 @@
 NAME= push_swap
 
-CCF= cc
+CCF= cc -Wall -Wextra -Werror
 
 SRC = $(shell find . -name "*.c")
 OBJ = $(SRC:.c=.o)

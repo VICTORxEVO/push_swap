@@ -9,7 +9,7 @@ static void set_targets_null(t_stack *node)
     }
 }
 
-static void    target_comfirmed(t_stack **to_set, t_stack **doubtful_target, int *nearest_number)
+static void    target_comfirmed(t_stack **to_set, t_stack **doubtful_target, long *nearest_number)
 {
         (*to_set)->target = *doubtful_target;
         *nearest_number = (*doubtful_target)->num;
@@ -19,14 +19,14 @@ void    set_a_targets(t_stack **head)
 {
     t_stack *to_set;
     t_stack *doubtful_target;
-    int nearest_bellow;
+    long    nearest_bellow;
 
-    to_set = head[0];
-    doubtful_target = head[1];
-    nearest_bellow = INT_MIN;
     set_targets_null(head[0]);
+    to_set = head[0];
     while(to_set)
     {
+        doubtful_target = head[1];
+        nearest_bellow = LONG_MIN;
         while(doubtful_target)
         {
             if (doubtful_target->num > nearest_bellow && doubtful_target->num < to_set->num)
@@ -36,8 +36,6 @@ void    set_a_targets(t_stack **head)
         if (!to_set->target)
             to_set->target = give_max('b', head);
         to_set = to_set->next;
-        doubtful_target = head[1];
-        nearest_bellow = INT_MIN;
     }
 }
 
@@ -45,14 +43,14 @@ void    set_b_targets(t_stack **head)
 {
     t_stack *to_set;
     t_stack *doubtful_target;
-    int nearest_up;
+    long    nearest_up;
 
-    to_set = head[1];
-    doubtful_target = head[0];
-    nearest_up = INT_MAX;
     set_targets_null(head[1]);
+    to_set = head[1];
     while(to_set)
     {
+        doubtful_target = head[0];
+        nearest_up = LONG_MAX;
         while(doubtful_target)
         {
             if (doubtful_target->num < nearest_up && doubtful_target->num > to_set->num)
@@ -62,7 +60,5 @@ void    set_b_targets(t_stack **head)
         if (!to_set->target)
             to_set->target = give_min('a', head);
         to_set = to_set->next;
-        doubtful_target = head[0];
-        nearest_up = INT_MIN;
     }
 }

@@ -2,7 +2,7 @@
 
 void    update_stack_indexing(t_stack **head)
 {
-    unsigned int i;
+    size_t i;
     t_stack *node;
 
     node = *head;
@@ -18,9 +18,8 @@ void    update_stack_indexing(t_stack **head)
     node = *head;
     while(node)
     {
-        if (node->index >= i / 2)
-            node->is_upper_mid = false;
-        else
+        node->is_upper_mid = false;
+        if (node->index <= i / 2)
             node->is_upper_mid = true;
         node = node->next;
     }

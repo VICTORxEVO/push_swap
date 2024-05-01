@@ -1,28 +1,48 @@
 #include "../includes/push_swap.h"
 
-void    print_stack(t_stack *head, char flag)
+void    main_sort(t_stack **head)
 {
-    if (flag == 'a')
-        printf("satck A\n+++++++++++++++++++++\n\n");
+    size_t    size;
+
+    update_stack_indexing(head);
+    size = ft_lstsize(head[0]);
+    if (size == 1)
+        return ;
+    else if (size == 2)
+        swap('a', head);
+    else if (size == 3)
+        sort_3(head);
+    else if (size == 4)
+        sort_4(head);
+    else if (size == 5)
+        sort_5(head);
     else
-        printf("satck B\n+++++++++++++++++++++\n\n");
-    t_stack *tmp = head;
-    while(tmp)
-    {
-        if (tmp->target)
-        {
-            printf("number -->> %d target->number %d\n", tmp->num, tmp->target->num);
-            printf("---------------------\n");
-        }
-        else
-        {
-            printf("number -->> %d\n", tmp->num);
-            printf("---------------------\n");
-        }
-        tmp = tmp->next;
-    }
-    printf("\n+++++++++++++END+++++++++++++\n\n");
+        sort_infinite(head);
 }
+
+// void    print_stack(t_stack *head, char flag)
+// {
+//     if (flag == 'a')
+//         printf("satck A\n+++++++++++++++++++++\n\n");
+//     else
+//         printf("satck B\n+++++++++++++++++++++\n\n");
+//     t_stack *tmp = head;
+//     while(tmp)
+//     {
+//         if (tmp->target)
+//         {
+//             printf("number -->> %d target->number %d\n", tmp->num, tmp->target->num);
+//             printf("---------------------\n");
+//         }
+//         else
+//         {
+//             printf("number -->> %d\n", tmp->num);
+//             printf("---------------------\n");
+//         }
+//         tmp = tmp->next;
+//     }
+//     printf("\n+++++++++++++END+++++++++++++\n\n");
+// }
 
 int main (int ac, char *av[])
 {
@@ -33,13 +53,7 @@ int main (int ac, char *av[])
     check_arg(ac - 1, av + 1);
     head = load_stack(&a, &b);
     load_check_num(ac - 1, av + 1, head);
-    // print_stack(head[0], 'a');
-    // print_stack(head[1], 'b');
-    if (!check_if_sorted(head[0]))
+    if (!is_sorted(head[0]))
         main_sort(head);
-    // if (check_if_sorted(head[0]))
-    //     write(1, "OK\n", 3);
-    // else
-    //     write(1, "KO\n", 3);
     clear_stack(head, 'S');
 }

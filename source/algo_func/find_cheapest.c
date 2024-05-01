@@ -1,13 +1,28 @@
 #include "../../includes/push_swap.h"
 
-static unsigned int max(unsigned int a, unsigned int b)
+static size_t max(size_t a, size_t b)
 {
-    if (a >= b)
+    if (a > b)
         return (a);
     return (b);
 }
 
-void    calculate_cost(t_stack *node, unsigned int size_node, unsigned int size_target)
+t_stack *extract_cheapest(t_stack *node)
+{
+    t_stack *cheapest;
+
+    cheapest = node;
+    while ((node = node->next))
+    {
+        // if (!cheapest->cost)
+        //     break;
+        if (node->cost < cheapest->cost)
+            cheapest = node;
+    }
+    return (cheapest);
+}
+
+void    calculate_cost(t_stack *node, size_t size_node, size_t size_target)
 {
     while (node)
     {
