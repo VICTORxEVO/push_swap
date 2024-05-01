@@ -3,13 +3,15 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
-
-source_bonus/
 .vscode/
 .Ds_Store
 push_swap
 output.txt
 tester.sh
+source/algo_func/*.o
+source/check_clear_func/*.o
+source/external_func/*.o
+source/moves_func/*.o
 # User-specific files
 *.rsuser
 *.suo

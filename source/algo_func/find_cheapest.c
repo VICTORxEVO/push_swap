@@ -14,8 +14,8 @@ t_stack *extract_cheapest(t_stack *node)
     cheapest = node;
     while ((node = node->next))
     {
-        // if (!cheapest->cost)
-        //     break;
+        if (!cheapest->cost)
+            break;
         if (node->cost < cheapest->cost)
             cheapest = node;
     }
@@ -31,9 +31,9 @@ void    calculate_cost(t_stack *node, size_t size_node, size_t size_target)
         else if (!node->is_upper_mid && !node->target->is_upper_mid)
             node->cost = max(size_node - node->index, size_target - node->target->index);
         else if (!node->is_upper_mid && node->target->is_upper_mid)
-            node->cost = max(size_node - node->index, node->target->index);
-        else if (node->is_upper_mid && !node->target->is_upper_mid)
-            node->cost = max(node->index, size_target - node->target->index);
+            node->cost = size_node - node->index + node->target->index;
+        else
+            node->cost = node->index + size_target - node->target->index;
         node = node->next;
     }
 }
