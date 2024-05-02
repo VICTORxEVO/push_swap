@@ -1,4 +1,4 @@
-#include "../../includes/push_swap.h"
+#include "../../includes/push_swap_bonus.h"
 
 static t_stack *ft_lstlast_1before(t_stack *lst)
 {
@@ -37,5 +37,4 @@ void    rev_rotate(char stack, t_stack **head)
         if ((head[0] && head[0]->next) || (head[1] && head[1]->next))
             write(1, "rrr\n", 4);
     }
-    update_stack_indexing(head);
 }

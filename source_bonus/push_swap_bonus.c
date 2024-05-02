@@ -2,23 +2,20 @@
 
 static void other_input(char *line, t_stack **head)
 {
-    if (ft_strncmp(line, 'ra', 2))
+    if (ft_strcmp(line, "ra/n") || ft_strcmp(line, "ra"))
         rotate('a', head);
-    else if (ft_strncmp(line, 'rb', 2))
+    else if (ft_strcmp(line, "rb/n") || ft_strcmp(line, "rb"))
         rotate('b', head);
-    else if (ft_strncmp(line, 'rr', 2))
+    else if (ft_strcmp(line, "rr/n") || ft_strcmp(line, "rr"))
         rotate('A', head);
-    else if (ft_strncmp(line, 'rra', 3))
-        reverse_rotate('a', head);
-    else if (ft_strncmp(line, 'rrb', 3))
-        reverse_rotate('b', head);
-    else if (ft_strncmp(line, 'rrr', 3))
-        reverse_rotate('A', head);
+    else if (ft_strcmp(line, "rra/n") || ft_strcmp(line, "rra"))
+        rev_rotate('a', head);
+    else if (ft_strcmp(line, "rrb/n") || ft_strcmp(line, "rrb"))
+        rev_rotate('b', head);
+    else if (ft_strcmp(line, "rrr/n") || ft_strcmp(line, "rrr"))
+        rev_rotate('A', head);
     else
-    {
-        ft_putstr_err("Error\n");
-        clear_stack(head, 'E');
-    }
+        (ft_putstr_err("Error\n"), clear_stack(head, 'E')); 
 }
 
 static void main_exec_input(t_stack **head)
@@ -28,15 +25,15 @@ static void main_exec_input(t_stack **head)
     line = get_next_line(0);
     while(line)
     {
-        if (ft_strncmp(line, 'pb', 2))
+        if (ft_strcmp(line, "pb/n") || ft_strcmp(line, "pb"))
             push_to('b', head);
-        else if (ft_strncmp(line, 'pa', 2))
+        else if (ft_strcmp(line, "pa/n") || ft_strcmp(line, "pa"))
             push_to('a', head);
-        else if (ft_strncmp(line, 'sa', 2))
+        else if (ft_strcmp(line, "sa/n") || ft_strcmp(line, "sa"))
             swap('a', head);
-        else if (ft_strncmp(line, 'sb', 2))
+        else if (ft_strcmp(line, "sb/n") || ft_strcmp(line, "sb"))
             swap('b', head);
-        else if (ft_strncmp(line, 'ss', 2))
+        else if (ft_strcmp(line, "ss/n") || ft_strcmp(line, "ss"))
             swap('A', head);
         else
             other_input(line, head);

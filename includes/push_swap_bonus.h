@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 10:36:47 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/05/02 12:00:03 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/05/02 14:17:38 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ char	**ft_split(const char *s, char c);
 void	ft_putstr_err(char *s);
 int     ft_isdigit(int x);
 void    ft_swap(int *a, int *b);
-int     ft_strncmp(const char *s1, const char *s2, unsigned int n);
+int     ft_strcmp(const char *s1, const char *s2);
+
 
 // check functions
 void    check_arg(int ac, char *av[]);

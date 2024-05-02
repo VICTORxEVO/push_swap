@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncmp.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 11:58:01 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/05/02 11:59:12 by ysbai-jo         ###   ########.fr       */
+/*   Created: 2023/11/22 17:22:56 by ysbai-jo          #+#    #+#             */
+/*   Updated: 2024/05/02 15:01:19 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../includes/push_swap_bonus.h"
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
+t_stack	*ft_lstnew(int content)
 {
-	unsigned int	i;
+	t_stack	*new;
 
-	i = 0;
-	while (s1[i] && s2[i] && (s1[i] == s2[i]) && n)
-	{
-		i++;
-		n--;
-	}
-	if (n == 0)
-		return (0);
-	return (s1[i] - s2[i]);
+	new = malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new->num = content;
+	new->next = NULL;
+	new->target = NULL;
+	return (new);
 }

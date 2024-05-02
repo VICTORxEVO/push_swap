@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 18:35:13 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/04/23 21:01:40 by ysbai-jo         ###   ########.fr       */
+/*   Created: 2023/11/23 18:34:33 by ysbai-jo          #+#    #+#             */
+/*   Updated: 2024/05/02 15:03:38 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../../includes/push_swap_bonus.h"
 
-t_stack	*ft_lstlast(t_stack *lst)
+size_t	ft_lstsize(t_stack *lst)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next != NULL)
+	size_t	s;
+
+	s = 0;
+	while (lst)
+	{
+		++s;
 		lst = lst->next;
-	return (lst);
+	}
+	return (s);
 }

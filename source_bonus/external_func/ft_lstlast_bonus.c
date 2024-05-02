@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 18:37:32 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/04/24 10:40:16 by ysbai-jo         ###   ########.fr       */
+/*   Created: 2023/11/23 18:35:13 by ysbai-jo          #+#    #+#             */
+/*   Updated: 2024/05/02 15:01:16 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../../includes/push_swap_bonus.h"
 
-void	ft_lstclear(t_stack **lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	t_stack	*tm;
-
 	if (!lst)
-		return ;
-	while ((*lst) != NULL)
-	{
-		tm = (*lst)->next;
-		ft_lstdelone(*lst);
-		*lst = tm;
-	}
-	*lst = NULL;
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

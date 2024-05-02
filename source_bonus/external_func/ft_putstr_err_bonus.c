@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_err_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 18:34:33 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/05/01 10:27:43 by ysbai-jo         ###   ########.fr       */
+/*   Created: 2023/11/22 11:10:30 by ysbai-jo          #+#    #+#             */
+/*   Updated: 2024/05/02 15:01:28 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../../includes/push_swap_bonus.h"
 
-unsigned int	ft_lstsize(t_stack *lst)
+void	ft_putstr_err(char *s)
 {
-	size_t	s;
-
-	s = 0;
-	while (lst)
+	if (s)
 	{
-		++s;
-		lst = lst->next;
+		while (*s)
+			write(2, s++, 1);
 	}
-	return (s);
 }
