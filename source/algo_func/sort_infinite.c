@@ -2,12 +2,12 @@
 
 static void sort_infinite_r(t_stack **head)
 {
-    t_stack *cheapest;
+    // t_stack *cheapest;
 
     set_b_targets(head);
     calculate_cost(head[1], ft_lstsize(head[1]), ft_lstsize(head[0]));
-    cheapest = extract_cheapest(head[1]);
-    move_targets_up(head, cheapest->target, cheapest);
+    // cheapest = extract_cheapest(head[1]);
+    move_targets_up(head, head[1]->target, head[1]);
     push_to('a', head);
 }
 

@@ -56,4 +56,5 @@ int main (int ac, char *av[])
     if (!is_sorted(head[0]))
         main_sort(head);
     clear_stack(head, 'S');
+    return (512);
 }

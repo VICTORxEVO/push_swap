@@ -12,6 +12,7 @@ source/algo_func/*.o
 source/check_clear_func/*.o
 source/external_func/*.o
 source/moves_func/*.o
+rename.sh
 # User-specific files
 *.rsuser
 *.suo

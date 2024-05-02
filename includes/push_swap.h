@@ -23,13 +23,6 @@ typedef struct s_stack
     struct s_stack *next;
 }               t_stack;
 
-
-
-
-
-
-
-
 // external functions
 int     ft_atoi(const char *str, t_stack **head, char **arr);
 bool	ft_lstadd_back(t_stack **lst, t_stack *new);
@@ -80,17 +73,5 @@ void        calculate_cost(t_stack *node, size_t size_a, size_t size_b);
 t_stack     *extract_cheapest(t_stack *node);
 void        move_targets_up(t_stack **head, t_stack *a_node, t_stack *b_node);
 void        final_touch(t_stack **head, t_stack *min_node);
-
-
-
-
-
-void    print_stack(t_stack *head, char flag);
-
-
-
-
-
-
 
 #endif
