@@ -20,30 +20,6 @@ void    main_sort(t_stack **head)
         sort_infinite(head);
 }
 
-// void    print_stack(t_stack *head, char flag)
-// {
-//     if (flag == 'a')
-//         printf("satck A\n+++++++++++++++++++++\n\n");
-//     else
-//         printf("satck B\n+++++++++++++++++++++\n\n");
-//     t_stack *tmp = head;
-//     while(tmp)
-//     {
-//         if (tmp->target)
-//         {
-//             printf("number -->> %d target->number %d\n", tmp->num, tmp->target->num);
-//             printf("---------------------\n");
-//         }
-//         else
-//         {
-//             printf("number -->> %d\n", tmp->num);
-//             printf("---------------------\n");
-//         }
-//         tmp = tmp->next;
-//     }
-//     printf("\n+++++++++++++END+++++++++++++\n\n");
-// }
-
 int main (int ac, char *av[])
 {
     t_stack *a;

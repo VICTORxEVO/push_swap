@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 10:36:47 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/05/02 11:49:53 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/05/02 12:00:03 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,12 @@ void	ft_lstclear(t_stack **lst);
 void	ft_lstdelone(t_stack *lst);
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lstnew(int content);
-unsigned int     ft_lstsize(t_stack *lst);
+size_t  ft_lstsize(t_stack *lst);
 char	**ft_split(const char *s, char c);
 void	ft_putstr_err(char *s);
 int     ft_isdigit(int x);
 void    ft_swap(int *a, int *b);
+int     ft_strncmp(const char *s1, const char *s2, unsigned int n);
 
 // check functions
 void    check_arg(int ac, char *av[]);

@@ -1,6 +1,6 @@
 #include "../../includes/push_swap.h"
 
-static void rotate_part2(t_stack **head, int i, char flag)
+static void rotate_part2(t_stack **head, int i)
 {
     t_stack *last_first_node;
 
@@ -9,27 +9,20 @@ static void rotate_part2(t_stack **head, int i, char flag)
     head[i] = head[i]->next;
     last_first_node = last_first_node->next;
     last_first_node->next = NULL;
-    if (flag == 'a')
-        write(1, "ra\n", 3);
-    else if (flag == 'b')
-        write(1, "rb\n", 3);
 }
 
 void        rotate(char stack, t_stack **head)
 {
 
     if (stack == 'a' && head[0] && head[0]->next)
-        rotate_part2(head, 0, stack);
+        rotate_part2(head, 0);
     else if (stack == 'b' && head[1] && head[1]->next)
-        rotate_part2(head, 1, stack);
+        rotate_part2(head, 1);
     else if (stack == 'A')
     {
         if (head[0] && head[0]->next)
-            rotate_part2(head, 0, 'X');
+            rotate_part2(head, 0);
         if (head[1] && head[1]->next)
-            rotate_part2(head, 1, 'X');
-        if ((head[1] && head[1]->next) || (head[1] && head[1]->next))
-            write(1, "rr\n", 3);
+            rotate_part2(head, 1);
     }
-    update_stack_indexing(head);
 }

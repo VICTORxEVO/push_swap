@@ -12,7 +12,6 @@ void    push_to(char stack, t_stack **head)
         head[1]->next = NULL;
         if (head[1])
             head[1]->next = next_node;
-        write(1, "pb\n", 3);
     }
     else if (stack == 'a' && head[1])
     {
@@ -22,7 +21,5 @@ void    push_to(char stack, t_stack **head)
         head[0]->next = NULL;
         if (head[0])
             head[0]->next = next_node;
-        write(1, "pa\n", 3);
     }
-    update_stack_indexing(head);
 }

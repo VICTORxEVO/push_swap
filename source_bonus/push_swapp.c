@@ -36,6 +36,8 @@ static void main_exec_input(t_stack **head)
             swap('a', head);
         else if (ft_strncmp(line, 'sb', 2))
             swap('b', head);
+        else if (ft_strncmp(line, 'ss', 2))
+            swap('A', head);
         else
             other_input(line, head);
     }

@@ -31,7 +31,7 @@ void	ft_lstclear(t_stack **lst);
 void	ft_lstdelone(t_stack *lst);
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lstnew(int content);
-unsigned int     ft_lstsize(t_stack *lst);
+size_t  ft_lstsize(t_stack *lst);
 char	**ft_split(const char *s, char c);
 void	ft_putstr_err(char *s);
 int     ft_isdigit(int x);
