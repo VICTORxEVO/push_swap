@@ -13,6 +13,7 @@ source/check_clear_func/*.o
 source/external_func/*.o
 source/moves_func/*.o
 rename.sh
+checker
 # User-specific files
 *.rsuser
 *.suo

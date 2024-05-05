@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   clear_arr_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/04 11:20:21 by ysbai-jo          #+#    #+#             */
+/*   Updated: 2024/05/04 11:24:40 by ysbai-jo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap_bonus.h"
 
-void    clear_arr(char **arr)
+void	clear_arr(char **arr)
 {
-    int i;
+	int	i;
 
-    i = -1;
-    while (arr[++i])
-        free(arr[i]);
-    free(arr);
+	i = -1;
+	while (arr[++i])
+		free(arr[i]);
+	free(arr);
 }

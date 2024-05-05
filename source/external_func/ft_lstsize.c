@@ -6,13 +6,13 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:34:33 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/05/01 10:27:43 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/05/04 11:30:39 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-unsigned int	ft_lstsize(t_stack *lst)
+size_t	ft_lstsize(t_stack *lst)
 {
 	size_t	s;
 

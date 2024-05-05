@@ -77,4 +77,7 @@ re: fclean all
 
 clear: all bonus clean
 
+
+norm:
+		@norminette
 .PHONY: all clean fclean re bonus clear

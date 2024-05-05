@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:44:59 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/05/01 11:34:45 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/05/04 10:42:52 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_atoi(const char *str, t_stack **head, char **arr)
 {
 	long		res;
-	short int 	sign;
+	short int	sign;
 	int			i;
 
 	res = 0;
