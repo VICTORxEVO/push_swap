@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 10:44:55 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/05/04 11:51:08 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/05/07 20:07:23 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,6 @@ void	sort_5(t_stack **head)
 	t_stack	*min;
 
 	min = give_min('a', head);
-	// if (min == head[0]->next->next)
-	// {
-	// 	rotate('a', head);
-	// 	swap('a', head);
-	// }
 	if (min->is_upper_mid)
 	{
 		while (min != head[0])

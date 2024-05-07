@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 11:21:15 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/05/04 11:25:15 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/05/06 18:50:43 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,14 @@ static void	rev_rotate_part2(t_stack **head)
 void	rev_rotate(char stack, t_stack **head)
 {
 	if (stack == 'a' && head[0] && head[0]->next)
-		(rev_rotate_part2(head), write(1, "rra\n", 4));
+		rev_rotate_part2(head);
 	else if (stack == 'b' && head[1] && head[1]->next)
-		(rev_rotate_part2(head + 1), write(1, "rrb\n", 4));
+		rev_rotate_part2(head + 1);
 	else if (stack == 'A')
 	{
 		if (head[0] && head[0]->next)
 			rev_rotate_part2(head);
 		if (head[1] && head[1]->next)
 			rev_rotate_part2(head + 1);
-		if ((head[0] && head[0]->next) || (head[1] && head[1]->next))
-			write(1, "rrr\n", 4);
 	}
 }

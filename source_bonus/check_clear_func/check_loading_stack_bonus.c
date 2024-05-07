@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 11:20:15 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/05/04 11:23:55 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/05/07 20:24:08 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	load_check_num(int ac, char *av[], t_stack **head)
 	while (++i < ac)
 	{
 		split_ptr = ft_split(av[i], ' ');
-		if (!split_ptr)
+		if (!split_ptr || !split_ptr[0])
 			clear_stack(head, 'E');
 		j = -1;
 		while (split_ptr[++j])

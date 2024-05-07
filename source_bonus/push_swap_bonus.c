@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 11:21:29 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/05/04 11:26:58 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/05/07 20:26:44 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 static void	other_input(char *line, t_stack **head)
 {
-	if (ft_strcmp(line, "ra/n") || ft_strcmp(line, "ra"))
+	if (!ft_strcmp(line, "ra\n"))
 		rotate('a', head);
-	else if (ft_strcmp(line, "rb/n") || ft_strcmp(line, "rb"))
+	else if (!ft_strcmp(line, "rb\n"))
 		rotate('b', head);
-	else if (ft_strcmp(line, "rr/n") || ft_strcmp(line, "rr"))
+	else if (!ft_strcmp(line, "rr\n"))
 		rotate('A', head);
-	else if (ft_strcmp(line, "rra/n") || ft_strcmp(line, "rra"))
+	else if (!ft_strcmp(line, "rra\n"))
 		rev_rotate('a', head);
-	else if (ft_strcmp(line, "rrb/n") || ft_strcmp(line, "rrb"))
+	else if (!ft_strcmp(line, "rrb\n"))
 		rev_rotate('b', head);
-	else if (ft_strcmp(line, "rrr/n") || ft_strcmp(line, "rrr"))
+	else if (!ft_strcmp(line, "rrr\n"))
 		rev_rotate('A', head);
 	else
-		(ft_putstr_err("Error\n"), clear_stack(head, 'E'));
+		(free(line), clear_stack(head, 'E'));
 }
 
 static void	main_exec_input(t_stack **head)
@@ -37,18 +37,20 @@ static void	main_exec_input(t_stack **head)
 	line = get_next_line(0);
 	while (line)
 	{
-		if (ft_strcmp(line, "pb/n") || ft_strcmp(line, "pb"))
+		if (!ft_strcmp(line, "pb\n"))
 			push_to('b', head);
-		else if (ft_strcmp(line, "pa/n") || ft_strcmp(line, "pa"))
+		else if (!ft_strcmp(line, "pa\n"))
 			push_to('a', head);
-		else if (ft_strcmp(line, "sa/n") || ft_strcmp(line, "sa"))
+		else if (!ft_strcmp(line, "sa\n"))
 			swap('a', head);
-		else if (ft_strcmp(line, "sb/n") || ft_strcmp(line, "sb"))
+		else if (!ft_strcmp(line, "sb\n"))
 			swap('b', head);
-		else if (ft_strcmp(line, "ss/n") || ft_strcmp(line, "ss"))
+		else if (!ft_strcmp(line, "ss\n"))
 			swap('A', head);
 		else
 			other_input(line, head);
+		free(line);
+		line = get_next_line(0);
 	}
 }
 
@@ -63,9 +65,9 @@ int	main(int ac, char *av[])
 	load_check_num(ac - 1, av + 1, head);
 	main_exec_input(head);
 	if (is_sorted(head[0]) && !head[1])
-		ft_putstr_err("OK\n");
+		write(1, "OK\n", 3);
 	else
-		ft_putstr_err("KO\n");
+		write(1, "KO\n", 3);
 	clear_stack(head, 'S');
 	return (512);
 }
