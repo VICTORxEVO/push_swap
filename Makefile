@@ -11,6 +11,15 @@ S_CLF= $(S)/check_clear_func
 S_EXT= $(S)/external_func
 S_MV= $(S)/moves_func
 
+RED := \033[0;31m
+GREEN := \033[0;32m
+YELLOW := \033[33;1m
+RESET := \033[0m
+CLEAR := \033[K
+RETURN := \r
+BOLD_PURPLE := \033[35;1m
+BOLD_UNDER_GREEN := \033[32;1;4m
+BOLD_GREEN := \033[32;1m
 
 SB= source_bonus
 SB_ALG= $(SB)/algo_func
@@ -46,30 +55,39 @@ bonus: $(B_NAME)
 
 $(NAME): $(OBJ)
 		@$(CCF) $^ -o $@
-		@echo "compiling"
-		@sleep 0.5
-		@echo "push_swap is ready"
-
+		@echo -n "$(RETURN)$(CLEAR)"
+		@echo  -n "$(RETURN)$(BOLD_GREEN)Building the program... $(RESET)$(CLEAR)"
+		@sleep 0.63
+		@echo  "$(RETURN)$(BOLD_UNDER_GREEN)>>>>>>>YOUR PROGRAM IS READY<<<<<<<$(RESET)$(CLEAR)"
+		@sleep 0.3
+		@echo  "$(YELLOW)Usage: ./push_swap <__numbers_>$(RESET)"
 
 $(B_NAME): $(B_OBJ)
 		@$(CCF) $^ -o $@
-		@echo "compiling"
-		@sleep 0.5
-		@echo "checker is ready"
+		@echo -n "$(RETURN)$(CLEAR)"
+		@echo  -n "$(RETURN)$(BOLD_GREEN)Building the program... $(RESET)$(CLEAR)"
+		@sleep 0.63
+		@echo  "$(RETURN)$(BOLD_UNDER_GREEN)>>>>>>>YOUR PROGRAM IS READY<<<<<<<$(RESET)$(CLEAR)"
+		@sleep 0.3
+		@echo  "$(YELLOW)Usage: ./checker <__numbers_>$(RESET)"
 
 
 %.o: %.c
-		@$(CCF) -c $< -o $@ -g
+		@echo -n "$(RETURN)$(YELLOW)Compiling:  $(notdir $<)....$(CLEAR)$(RESET)"
+		@$(CCF)  -c $< -o $@
+		@sleep 0.08
 
 
 clean:
+		@echo  -n "$(YELLOW)Cleaning up...$(RESET)$(CLEAR)$(RETURN)"
+		@sleep 0.60
 		@rm -f $(OBJ) $(B_OBJ)
-		@echo "cleaning..."
 
 
 fclean: clean
+		@echo "$(YELLOW)Cleaning up the program...$(RESET)"
+		@sleep 0.60
 		@rm -f $(NAME) $(B_NAME)
-		@echo "cleaning program..."
 
 
 re: fclean all

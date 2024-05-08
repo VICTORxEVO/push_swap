@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:44:59 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/05/04 11:20:31 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/05/08 20:22:26 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int	ft_atoi(const char *str, t_stack **head, char **arr)
 	{
 		res = res * 10 + (str[i] - 48);
 		i++;
-		if (res >= INT_MAX || res <= INT_MIN || str[i] == '-' || str[i] == '+')
+		if ((res * sign) > INT_MAX || (res * sign) < INT_MIN || str[i] == '-'
+			|| str[i] == '+')
 			(clear_arr(arr), clear_stack(head, 'E'));
 	}
 	return (res * sign);

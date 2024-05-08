@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 10:45:05 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/05/04 11:35:39 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/05/08 20:15:52 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	check_if_num(int ac, char *av[])
 		{
 			if (!ft_isdigit(av[i][j]) && !(av[i][j] == ' ' || av[i][j] == '+'
 					|| av[i][j] == '-'))
-				(ft_putstr_err("Error\n"), exit(EXIT_FAILURE));
+				(ft_putstr_err("Error\n"), exit(255));
 		}
 	}
 }
@@ -33,6 +33,6 @@ static void	check_if_num(int ac, char *av[])
 void	check_arg(int ac, char *av[])
 {
 	if (ac < 1)
-		exit(EXIT_FAILURE);
+		exit(0);
 	check_if_num(ac, av);
 }

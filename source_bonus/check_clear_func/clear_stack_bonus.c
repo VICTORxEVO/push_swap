@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 11:20:25 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/05/04 11:24:21 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/05/08 20:10:58 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	clear_stack(t_stack **head, char flag)
 	if (flag == 'E')
 	{
 		ft_putstr_err("Error\n");
-		exit(EXIT_FAILURE);
+		exit(255);
 	}
 	else
 		exit(EXIT_SUCCESS);
