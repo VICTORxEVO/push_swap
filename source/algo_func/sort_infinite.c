@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 10:44:59 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2024/05/04 10:45:00 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2024/05/08 20:58:18 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 static void	sort_infinite_r(t_stack **head)
 {
 	set_b_targets(head);
-	calculate_cost(head[1], ft_lstsize(head[1]), ft_lstsize(head[0]));
 	move_targets_up(head, head[1]->target, head[1]);
 	push_to('a', head);
 }
